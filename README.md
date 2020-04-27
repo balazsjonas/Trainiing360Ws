@@ -56,6 +56,7 @@
    * minden tag, attr, element külön objektum
    * ősosztály: Node
    * leszármazottak: Document, Element, Attr, Entity stb
+ * A tagek között whitespaceket text-nek tekinti
 
  
 # links
