@@ -1,4 +1,4 @@
-# Trainiing360Ws
+# Trainiing360 WebServices
 
 # könyvek
  * Brett McLaughilin, Justin Edelson: Java and xml (2006, O'Reilly)
@@ -58,6 +58,10 @@
    * leszármazottak: Document, Element, Attr, Entity stb
  * A tagek között whitespaceket text-nek tekinti
 
+# SAX
+ * push parser
+   * eseményvezérelt, ha tag-hez ér, akkor szól
+ * csak olvasásra
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
