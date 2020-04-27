@@ -14,8 +14,39 @@
  * xml pragma:
     * xml verzióját szokták beleírni
     * encoding
-    * standalone 
+    * standalone
+ * xml szabványnak megfelel: well-formed
+
+# XML névterek
+ * motiváció: névütközés kezelése
+   * két forrásból érkező xml használhassa ugyanazokat a tageket
+   * a minősítés leggyakrabban url legyen
+   * xml-en belül aliasszal hivatkozunk rá
+     * az alias neve teljesen mindegy, hogy mi
+   * ott is használható, ahol deklarálom
+     * <ns0:root xmlns:ns0="http://training360.com/schema/catalog>
+   * Elegendő az első használatkor deklarálni
+
+# XML validáció
+ * szabályrendszerek:
+   * tagek nevei <xs:element>
+   * mit tartalmazhat
+   * multiplicitás
+   * attributomok tipussal
+ * ha megfelel a sémának: valid
+ * attribute vagy tag:
+   * ízlés szerint
+   * pl csak tagek
+   * attributomoknak vannak megszorításai
+     * tagen belül lehet tag
+     * attributomot nem lehet tovább struktúrálni
+     * attr. csak egyszer szerepelhet?
+ * az XMLSchema saját magát írja le
+ 
+
  
 # links
+https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
 http://www.learnwebservices.com/
 https://github.com/Training360/javax-ws-20200427
+http://xmlstar.sourceforge.net/
