@@ -1,16 +1,22 @@
 package dom;
 
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.print.Doc;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DomService {
     public static void main(String[] args) {
@@ -28,6 +34,74 @@ public class DomService {
 
     }
 
+    public void writeCatalog(Catalog catalog, Writer dst) {
+        // <catalog><book>Java and XML</book><book>Pro XML Development
+        //            with Java Technology</book></catalog>
+
+        try {
+            var factory = DocumentBuilderFactory.newInstance();
+            var builder = factory.newDocumentBuilder();
+            var doc = builder.newDocument();
+            var catalogElement = doc.createElement("catalog");
+            doc.appendChild(catalogElement);
+            for (var book: catalog.getBooks()) {
+                var bookElement = doc.createElement("book");
+                var textElement = doc.createTextNode(book.getTitle());
+                bookElement.appendChild(textElement);
+                catalogElement.appendChild(bookElement);
+            }
+
+            var transformerFactory = TransformerFactory.newInstance();
+            var transformer = transformerFactory.newTransformer();
+            var source = new DOMSource(doc);
+            var result = new StreamResult(dst);
+
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+            transformer.transform(source, result);
+        }
+        catch (Exception e) {
+            throw new IllegalStateException("Can not parse XML", e);
+        }
+
+
+        // 1. létre kell hozni egy dokumentumot
+
+        // factory, builder
+        // builder. newDocument()
+
+        // Document.createElement -> Element
+        //appendChild()
+
+        // DOM kiírása transformerrel
+    }
+    public void writeCatalog2(Catalog catalog, Writer writer) {
+        // új doksi
+        try {
+            var documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            var documentBuilder = documentBuilderFactory.newDocumentBuilder();
+
+            var document = documentBuilder.newDocument();
+            var catalogElement = document.createElement("catalog");
+            document.appendChild(catalogElement);
+
+            var bookList = catalog.getBooks();
+            for (Book value : bookList) {
+                var book = document.createElement("book");
+                var title = document.createTextNode(value.getTitle());
+                book.appendChild(title);
+                book.setTextContent(title.getTextContent());
+                catalogElement.appendChild(book);
+            }
+            System.out.println(document);
+
+        }
+        catch (Exception e) {
+            System.out.println("hiba");
+            throw new RuntimeException(e);
+        }
+    }
     public Catalog readXml3(Reader reader) {
         try {
             var factory = DocumentBuilderFactory.newInstance();
