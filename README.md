@@ -62,6 +62,14 @@
  * push parser
    * eseményvezérelt, ha tag-hez ér, akkor szól
  * csak olvasásra
+
+# StAX
+ * pull parser
+   * én vezérlem a feldolgozást
+ * két api:
+   * Cursor API: alacsonyabb szintű, ugyanannak a példánynak az állapotát változtatja
+     * XMLStreamReader visszaadja a tipust (start, end, stb), textElement, 
+   * Iterator API: új példány jön létre
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
