@@ -9,4 +9,7 @@
         <title>Pro XML Development
             with Java Technology</title>
     </book>
+    <book isbn10="asdf">
+        <title>1+2$lt;3</title>
+    </book>
 </catalog>
