@@ -3,6 +3,7 @@ package dom;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -12,20 +13,41 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class DomService {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         DomService dom = new DomService();
         var reader = new BufferedReader(new InputStreamReader(
                 DomService.class.getResourceAsStream("/catalog.xml")
         ));
-        try(reader) {
+        try (reader) {
             var catalog = dom.readXml(reader);
             System.out.println("print catalog");
             System.out.println(catalog);
-        }
-        catch (IOException ioException) {
+        } catch (IOException ioException) {
             throw new UncheckedIOException(ioException);
         }
 
+    }
+
+    public Catalog readXml3(Reader reader) {
+        try {
+            var factory = DocumentBuilderFactory.newInstance();
+            var builder = factory.newDocumentBuilder();
+            var doc = builder.parse(new InputSource(reader));
+            // printNode(doc);
+            var bookElements = doc.getElementsByTagName("book");
+            var catalog = new Catalog();
+            catalog.setBooks(new ArrayList<>());
+            for (int i = 0; i < bookElements.getLength(); i++) {
+                var book = new Book();
+                book.setIsbn10(((Element) (bookElements.item(i))).getAttribute("isbn10"));
+                book.setTitle(((Element) bookElements.item(i)).getElementsByTagName("title").item(0).getChildNodes().item(0).getNodeValue());
+                catalog.getBooks().add(book);
+            }
+            return catalog;
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Catalog readXml(Reader reader) {
@@ -43,8 +65,9 @@ public class DomService {
             for (int i = 0; i < catalogChildren.getLength(); i++) {
                 if (catalogChildren.item(i).getNodeName().equals("book")) {
                     var book = new Book();
+
 //                    System.out.println(catalogChildren.item(i).getNodeName());
-                    book.setIsbn10(((Element)(catalogChildren.item(i))).getAttribute("isbn10"));
+                    book.setIsbn10(((Element) (catalogChildren.item(i))).getAttribute("isbn10"));
                     if (catalogChildren.item(i).getChildNodes().getLength() > 0) {
                         var titleElement = (Element) catalogChildren.item(i).getChildNodes().item(1);
 //                        System.out.println(titleElement.getChildNodes().item(0).getNodeValue());
@@ -55,11 +78,11 @@ public class DomService {
             }
 
             return catalog;
-        }
-        catch (ParserConfigurationException | SAXException | IOException e) {
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new IllegalStateException("Can not parse XML", e);
         }
     }
+
     public Catalog readXml2(Reader reader) {
         //Reader jobb mint a String. Ezzel tudunk bufferelve olvasni
         // nem kell az egészet beolvasni
@@ -78,7 +101,7 @@ public class DomService {
             for (int i = 0; i < books.getLength(); i++) {
                 var book = new Book();
                 System.out.println(books.item(i).getNodeName());
-                
+
             }
             return catalog;
         } catch (ParserConfigurationException | SAXException | IOException e) {
@@ -88,7 +111,7 @@ public class DomService {
     }
 
     private void printNode(Node node) {
-        if(node.getNodeType() != Node.TEXT_NODE) {
+        if (node.getNodeType() != Node.TEXT_NODE) {
             System.out.println(node.getNodeName() + " " + node.getNodeValue() + " " + node.getNodeType());
         }
         var children = node.getChildNodes();

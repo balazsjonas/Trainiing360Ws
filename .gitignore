@@ -25,4 +25,14 @@ hs_err_pid*
 *.iml
 /target/*
 
+target
 
+.idea
+.mvn
+*.iml
+
+.settings
+.classpath
+.project
+
+/xml/target/classes/catalog.xsl
