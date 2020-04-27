@@ -42,7 +42,20 @@
      * attributomot nem lehet tovább struktúrálni
      * attr. csak egyszer szerepelhet?
  * az XMLSchema saját magát írja le
- 
+
+# java xml:
+ * jaxp (dom, sax, stAX, xslt, xpath)-t mind ismeri
+   * implementációk:
+     * xerces
+     * xalan
+# DOM
+ * beolvassa az egész fájlt
+ * memóriában felépít egy fát
+ * sok memóriát igényel (kb a fájl 4x-ét)
+ * könnyű dolgozni vele
+   * minden tag, attr, element külön objektum
+   * ősosztály: Node
+   * leszármazottak: Document, Element, Attr, Entity stb
 
  
 # links
