@@ -88,6 +88,15 @@
      * XMLStreamReader visszaadja a tipust (start, end, stb), textElement, 
    * Iterator API: új példány jön létre
  
+# XML séma
+ * adattípusok: pl string, decimal, float, date
+ * dokumentálásra használható
+ * xsi:schemaLocation párokból áll: névtér és xsd url-je
+   * parsernek meg lehet mondani, hogy url-helyett egy adott fájlt használjon.
+ * adattípusok:
+   * xsd:normalizedString: nem lehet \r\l \n\t
+   * xsd:ID: egyedi az xml-en belül
+
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  
