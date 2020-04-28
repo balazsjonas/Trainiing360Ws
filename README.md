@@ -16,6 +16,9 @@
     * encoding
     * standalone
  * xml szabványnak megfelel: well-formed
+ * standalone="no":
+   * DTD-vel együtt kell értelmezni
+   * vegye figyelembe a DTD-ben definiált értékeket
 
 # XML névterek
  * motiváció: névütközés kezelése
@@ -26,6 +29,9 @@
    * ott is használható, ahol deklarálom
      * <ns0:root xmlns:ns0="http://training360.com/schema/catalog>
    * Elegendő az első használatkor deklarálni
+   * default névtér esetén nem kell prefix
+     * az összes tag ebben a névtérben van
+     * teljes doksira vagy részfára
 
 # XML validáció
  * szabályrendszerek:
@@ -42,6 +48,12 @@
      * attributomot nem lehet tovább struktúrálni
      * attr. csak egyszer szerepelhet?
  * az XMLSchema saját magát írja le
+ * DTD:
+   * nem külön validáció, hanem a parsing process része
+   * SAX, DOM támogatja
+     * setValidatin(true)
+     * error handler definiálható
+   * StAX nem támogatja!!
 
 # java xml:
  * jaxp (dom, sax, stAX, xslt, xpath)-t mind ismeri
@@ -57,6 +69,11 @@
    * ősosztály: Node
    * leszármazottak: Document, Element, Attr, Entity stb
  * A tagek között whitespaceket text-nek tekinti
+ * névterek:
+   * ```documentBuilderFactory.setNamespaceAware(true);```
+   * root.setAttribute("xmlns:ns", "url")
+   * getElementsByTagNameNS: URI-t kell megadni, a prefix/alisas senkit nem érdekel
+   * Node.setPrefix
 
 # SAX
  * push parser
@@ -70,6 +87,9 @@
    * Cursor API: alacsonyabb szintű, ugyanannak a példánynak az állapotát változtatja
      * XMLStreamReader visszaadja a tipust (start, end, stb), textElement, 
    * Iterator API: új példány jön létre
+ 
+# tools
+ * xmlUnit: xmlunit-core, xmlunit-assertj
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
