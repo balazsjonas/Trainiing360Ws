@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://training360.com/schemas/catalog">
-    <xs:element name="catalog" type="catalogType">
+    <xs:element name="catalog" type="c:catalogType" xmlns="http://training360.com/schemas/catalog">
         <xs:annotation>
             <xs:documentation>Catalog of books &lt;3</xs:documentation>
         </xs:annotation>
@@ -12,15 +12,15 @@
         </xs:all>
         <xs:attribute name="isbn10" type="xs:string"/>
     </xs:complexType>
-    <xs:complexType name="catalogType">
-        <xs:all>
-            <xs:element name="book" type="bookType"/>
-        </xs:all>
-    </xs:complexType>
 
+
+    <xs:complexType name="catalogType"> <xs:all>
+        <xs:element name="c:book" type="bookType" xmlns:c="http://training360.com/schemas/catalog"/>
+    </xs:all></xs:complexType>
 </xs:schema>
         <!--<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://training360.com/schemas/catalog" xmlns:xs="http://www.w3.org/2001/XMLSchema">-->
-        <!--  <xs:element name="catalog" type="cat:catalogType" xmlns:cat="http://training360.com/schemas/catalog">-->
+        <!--  <xs:element name="catalog" type="cat:catalogType"
+         xmlns:cat="http://training360.com/schemas/catalog">-->
 
         <!--  </xs:element>-->
         <!--  <xs:complexType name="bookType">-->
