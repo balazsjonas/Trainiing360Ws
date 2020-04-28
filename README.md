@@ -99,7 +99,8 @@
 
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
- * jaxb-v2 maven plugin
+ * jaxb-v2-maven plugin  és maven-jaxb-plugin
+   * java -> xsd és xsd -> java
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
