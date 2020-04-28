@@ -3,9 +3,7 @@ package sax;
 import dom.Catalog;
 import dom.DomService;
 import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
 
-import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
 
@@ -25,7 +23,7 @@ public class SaxService {
     public static void main(String[] args) {
         DomService dom = new DomService();
         var reader = new BufferedReader(new InputStreamReader(
-                DomService.class.getResourceAsStream("/catalog.xml")
+                DomService.class.getResourceAsStream("/default/catalog.xml")
         ));
         try(reader) {
             new SaxService().reader(reader);

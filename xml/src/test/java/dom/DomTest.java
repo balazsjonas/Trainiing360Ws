@@ -1,11 +1,10 @@
 package dom;
 
-import org.assertj.core.groups.Tuple;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.xmlunit.assertj.XmlAssert;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.tuple;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.BufferedReader;
@@ -48,7 +47,7 @@ public class DomTest {
     void fromFile() {
         var domService = new DomService();
         var reader = new BufferedReader(new InputStreamReader(
-                DomService.class.getResourceAsStream("/catalog.xml")
+                DomService.class.getResourceAsStream("/default/catalog.xml")
         ));
 
         var catalog = domService.readXml3(reader);
@@ -62,11 +61,12 @@ public class DomTest {
 //                .contains(Tuple.tuple("Java and XML", "059610149X"));
     }
 
+    @Disabled
     @Test
     void xmlUnit() {
         var domService = new DomService();
         var reader = new BufferedReader(new InputStreamReader(
-                DomService.class.getResourceAsStream("/catalog.xml")
+                DomService.class.getResourceAsStream("/default/catalog.xml")
         ));
 
         var catalog = domService.readXml3(reader);

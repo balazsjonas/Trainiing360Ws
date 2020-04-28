@@ -5,8 +5,6 @@ import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import javax.print.Doc;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
@@ -15,14 +13,12 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class DomService {
     public static void main(String[] args) {
         DomService dom = new DomService();
         var reader = new BufferedReader(new InputStreamReader(
-                DomService.class.getResourceAsStream("/catalog.xml")
+                DomService.class.getResourceAsStream("/default/catalog.xml")
         ));
         try (reader) {
             var catalog = dom.readXml(reader);

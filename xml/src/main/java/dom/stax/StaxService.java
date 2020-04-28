@@ -102,7 +102,7 @@ public class StaxService {
 
     public static void main(String[] args) {
         var reader = new BufferedReader(new InputStreamReader(
-                DomService.class.getResourceAsStream("/catalog.xml")
+                DomService.class.getResourceAsStream("/default/catalog.xml")
         ));
         try (reader) {
             System.out.println(new StaxService().readIsbn10Numbers(reader));
