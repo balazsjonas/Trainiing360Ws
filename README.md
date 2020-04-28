@@ -1,4 +1,4 @@
-# Trainiing360 WebServices
+# Training360 WebServices
 
 # könyvek
  * Brett McLaughilin, Justin Edelson: Java and xml (2006, O'Reilly)
@@ -96,11 +96,17 @@
  * adattípusok:
    * xsd:normalizedString: nem lehet \r\l \n\t
    * xsd:ID: egyedi az xml-en belül
+# SOAP
+ * adattípus: SOAP(XML) de a tartalma tetszőleges
+ * ennek leírására WSDL, aminek payloadját XSD-vel elehet leírni.
 
+# JAX-WS
+ * cxf még spring-ws helyett is
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  * jaxb-v2-maven plugin  és maven-jaxb-plugin
    * java -> xsd és xsd -> java
+   
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
