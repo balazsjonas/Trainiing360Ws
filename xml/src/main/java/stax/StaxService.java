@@ -1,4 +1,4 @@
-package dom.stax;
+package stax;
 
 import dom.Book;
 import dom.Catalog;

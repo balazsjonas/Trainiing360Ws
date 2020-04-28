@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Catalog of books -->
-<c:catalog xmlns:c="catalogSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:b="bookSchema"
-           xsi:schemaLocation="catalogSchema catalog-ns.xsd bookSchema book-ns.xsd">
-    <b:book isbn10="059610149X">
+<catalog>
+    <book isbn10="059610149X">
         <title>Java and XML</title>
         <available/>
-    </b:book>
-    <b:book isbn10="1590597060">
+    </book>
+    <book isbn10="1590597060">
         <title>Pro XML Development
             with Java Technology
         </title>
-    </b:book>
-    <b:book isbn10="asdf">
+    </book>
+    <book isbn10="asdf">
         <title>1+2$lt;3</title>
-    </b:book>
-</c:catalog>
+    </book>
+</catalog>
