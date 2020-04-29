@@ -8,7 +8,7 @@ import java.util.List;
 @WebService(
 //        targetNamespace = "http://training360.com/catalog"
 )
-public class CatalogService {
+public class CatalogService implements CatalogServiceApi {
 
     @WebMethod // wsdl operation
 
