@@ -124,6 +124,21 @@
 # JAX-WS
  * cxf még spring-ws helyett is
  
+# JSON feldolgozás:
+ * pull parser (nem kell az egészet feldolgozni)
+   * JSON-P: szabvány, J2EE része
+ * fa: parsoljuk az egész doksit, lekérdezéskor bejárjuk (kb xml-DOM)
+   * org.json
+ * binding (helyesebben mapping):
+   * jackson
+   * gson: nagyon gyors
+     * stream: csak egy részletet olvasson be java objektumba
+   * moxy:
+     * ez egy jaxb implementáció, de tud json-t is kezelni
+     * ugyanazt az annotációt lehet használni!
+   
+     
+ 
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  * jaxb-v2-maven plugin  és maven-jaxb-plugin
