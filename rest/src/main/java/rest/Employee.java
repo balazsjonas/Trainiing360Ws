@@ -8,5 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
+    Long id;
     String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
 }
