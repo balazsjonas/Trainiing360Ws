@@ -1,0 +1,7 @@
+GET http://localhost:8082/api/employee
+
+###
+POST http://localhost:8082/api/employee
+Content-Type: application/json
+
+{"name":  "Idea Doe"}
