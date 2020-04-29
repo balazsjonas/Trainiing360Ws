@@ -100,8 +100,24 @@
  * adattípus: SOAP(XML) de a tartalma tetszőleges
  * ennek leírására WSDL, aminek payloadját XSD-vel elehet leírni.
 
+# módszer
+ * TOP down: WSDL -> alkalmazás megírása (kód generálás könnyű)
+ * bottom up: alkalmazás előbb
+ * meet-in-the-middle: van alkalmazás + wsdl-t kapunk
+
+# web alkalmazások:
+ * rétegek: perzisztens, business logic, prezentációs
+ * üzleti entitások kiajánlása nem jó ötlet:
+   * sok alkalmazás hívja -> nem tudjuk módosítani, mert a klienseket is módosítani kell
+   * integrációs réteg (gateway), amit a kliensek hívhatnak
+   * ez felel meg a prezentációs rétegnek
+     * UI: interface az emberek felé
+     * gateway: interface a számítógépek felé
+   * API verziózása!
+   
 # JAX-WS
  * cxf még spring-ws helyett is
+ 
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  * jaxb-v2-maven plugin  és maven-jaxb-plugin
