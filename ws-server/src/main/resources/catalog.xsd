@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.1 svn-revision#6ef5f7eb9a938dbc4562f25f8fa0b67cc4ff2dbb. -->
+<xs:schema targetNamespace="http://catalog/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://catalog/">
+    <xs:element type="tns:getCatalog" name="getCatalog"/>
+    <xs:element type="tns:getCatalogResponse" name="getCatalogResponse"/>
+    <xs:complexType name="getCatalog">
+        <xs:sequence/>
+    </xs:complexType>
+    <xs:complexType name="getCatalogResponse">
+        <xs:sequence>
+            <xs:element type="tns:catalog" name="return" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="catalog">
+        <xs:sequence>
+            <xs:element type="tns:book" name="books" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="book">
+        <xs:sequence>
+            <xs:element type="xs:string" name="isbn10" minOccurs="0"/>
+            <xs:element type="xs:string" name="title" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
