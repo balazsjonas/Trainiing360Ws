@@ -114,6 +114,12 @@
      * UI: interface az emberek felé
      * gateway: interface a számítógépek felé
    * API verziózása!
+ * je22 szavbányok: servlet (HTTP), JSP(html), jaxb(XML), jax-ws (SOAP)
+   * webkonténer (pl tomcat, jetty):
+     * jsp és servlet api-t implementálja
+     * jaxb-hez és jaxws-hez kell implementációt mellékelni (pl cxf, axis, ri)
+   * alkalmazás szerverek (pl weblogic)
+     * az összeset implementálja
    
 # JAX-WS
  * cxf még spring-ws helyett is
