@@ -147,6 +147,20 @@
  * generálós: MapStruct, JMapper
  * reflexiós: Dozer, ModelMapper
  
+# RESTful vs SOAP
+ * Roy Fielding disszertációja
+   * HTTP protokol szerzője is
+ * metódusok helyett resource-ok
+   * erőforrásokon csak CRUD műveletek
+ * REST leírásra WADL nem elterjedt
+ * megvalósítások : JAX-RS, Spring RestController
+ 
+# JAX-RS
+ * j2ee része, szabvány
+ * implementációk: Eclipse Jersey
+   * xml és json generálással nem foglalkozik
+ 
+
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  * jaxb-v2-maven plugin  és maven-jaxb-plugin
