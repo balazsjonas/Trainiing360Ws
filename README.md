@@ -137,13 +137,21 @@
      * ez egy jaxb implementáció, de tud json-t is kezelni
      * ugyanazt az annotációt lehet használni!
    
-     
+# Object mapperek:
+ * entitás és dto között
+ * öröklődés rossz minta:
+   * entitás és dto között nincs IsA kapcsolat
+   * ugyanazokhoz a nehézségekhez vezet, ha változik a dto, változtatni kell az entitást is
+   * ha az entitás változik, dto-kat és klienseket is változtatni kel
+   
+ * generálós: MapStruct, JMapper
+ * reflexiós: Dozer, ModelMapper
  
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
  * jaxb-v2-maven plugin  és maven-jaxb-plugin
    * java -> xsd és xsd -> java
-   
+ * jsonassert
  
 # links
 https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megvalositasa-java-platformon-tanfolyam-javax-ws
