@@ -159,7 +159,14 @@
  * j2ee része, szabvány
  * implementációk: Eclipse Jersey
    * xml és json generálással nem foglalkozik
+# J2EE szabványok
+ * Servlet (HTTP)
+ * JSP (HTML)
+ * JAXB (XML)
+ * JAX-WS (SOAP)
  
+ * A webkonténerek (pl Tomcat, Jetty) az első kettőt implementálják és a többihez kell implementáció (pl CXF)
+ * Az alkalmazásszerverek (pl Weblogic, Payara) az összeset megvalósítják.
 
 # tools
  * xmlUnit: xmlunit-core, xmlunit-assertj
@@ -172,3 +179,5 @@ https://www.training360.com/xml-kezeles-es-soap-restful-webszolgaltatasok-megval
 http://www.learnwebservices.com/
 https://github.com/Training360/javax-ws-20200427
 http://xmlstar.sourceforge.net/
+https://www.baeldung.com/java-performance-mapping-frameworks
+
